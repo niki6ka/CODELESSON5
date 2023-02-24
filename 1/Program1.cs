@@ -15,10 +15,10 @@ int maxnumber = 0;
 int minnumber = 1000;
 int difference = 0;
 int Task = 0;
+int evensum = 0;
 
 void FillArray(int[] Numbers)
 {
-    int evensum = 0;
     int index = 0;
     while (index < ArrLen)
     {
@@ -38,6 +38,8 @@ void FillArray(int[] Numbers)
  
  }
 FillArray(Numbers);
+  Console.WriteLine(" - given array of random numbers");
+  Console.WriteLine();
   Console.WriteLine("1) Number of even numbers");
   Console.WriteLine("2) The sum of numbers at odd indices");
   Console.WriteLine("3) The difference between the maximum and minimum number");
