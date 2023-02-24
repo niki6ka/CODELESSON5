@@ -4,9 +4,18 @@
 
 //Задача 36: Задайте одномерный массив, заполненный случайными числами. 
 //Найдите сумму элементов, стоящих на нечётных позициях.
+
+//Задача 38: Задайте массив вещественных чисел. 
+//Найдите разницу между максимальным и минимальным элементов массива.
+
 int ArrLen = 10;
 int[] Numbers = new int[ArrLen];
 int notevensum = 0;
+int maxnumber = 0;
+int minnumber = 1000;
+int difference = 0;
+int Task = 0;
+
 void FillArray(int[] Numbers)
 {
     int evensum = 0;
@@ -20,10 +29,28 @@ void FillArray(int[] Numbers)
               {evensum = evensum + 1;}
         if (index % 2 == 1)
         {notevensum = notevensum + Numbers[index];}
+        if (Numbers[index] > maxnumber) {maxnumber = Numbers[index];}
+        if (Numbers[index] < minnumber) {minnumber = Numbers[index];}
 
         index++;
     }
-   Console.Write("Even number " + evensum + "Sum of numbers at odd indices = " + notevensum); 
-}
-
+    difference = maxnumber - minnumber;
+ 
+ }
 FillArray(Numbers);
+  Console.WriteLine("1) Number of even numbers");
+  Console.WriteLine("2) The sum of numbers at odd indices");
+  Console.WriteLine("3) The difference between the maximum and minimum number");
+Task = Convert.ToInt32(Console.ReadLine());
+  switch (Task)
+{
+    case 1:
+        Console.WriteLine("Number of even numbers " + evensum);
+        break;
+    case 2:
+        Console.WriteLine("The sum of numbers at odd indices " + notevensum);
+        break;
+    case 3:
+        Console.WriteLine("The difference between the maximum and minimum number " + difference);
+        break;
+}
